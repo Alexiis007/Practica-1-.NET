@@ -1,0 +1,47 @@
+@model PartyInvites.Models.GuestResponse
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>RsvpForm</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+</head>
+
+<body>
+    <h5 class="bg-primary text-white text-center m-2 p-2">RSVP</h5>
+    <form asp-action="RsvpForm" method="post" class="m-2">
+        <div asp-validation-summary="All"></div>
+        <div class="form-group">
+            <label asp-for="Nombre" class="form-label">Nombre:</label>
+            <input asp-for="Nombre" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Correo" class="form-label">Correo:</label>
+            <input asp-for="Correo" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Telefono" class="form-label">Telefono:</label>
+            <input asp-for="Telefono" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="WillAttend" class="form-label">
+                Iras a la fiesta:
+            </label>
+            <select asp-for="WillAttend" class="form-select">
+                <option value="">Cual es tu opcion?</option>
+                <option value="true">Claro que ire</option>
+                <option value="false">No podre ir</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">
+            Enviar
+        </button>
+    </form>
+</body>
+
+</html>
